@@ -5,11 +5,11 @@ public class MessageRendererImpl implements MessageRenderer {
 
     @Override
     public void render() {
-        if (messageProvider != null) {
-            System.out.println(messageProvider.getMessage());
+        if (messageProvider == null) {
+            throw new RuntimeException("You must set the property messageProvider of class:"
+                    + MessageRendererImpl.class.getName());
         }
-        throw new RuntimeException("You must set the property messageProvider of class:"
-                + MessageRendererImpl.class.getName());
+        System.out.println(messageProvider.getMessage());
     }
 
     @Override
