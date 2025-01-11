@@ -3,6 +3,9 @@ package com.illuutech;
 public class MessageRendererImpl implements MessageRenderer {
     private MessageProvider messageProvider;
 
+    public MessageRendererImpl() {
+    }
+
     @Override
     public void render() {
         if (messageProvider == null) {
